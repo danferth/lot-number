@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
+
+@tailwind base;
+@tailwind components;
+
+/* Script style for ceertificate signee */
+.handwritten {
+  font-family: "Oooh Baby", cursive;
+}
+
+/* print? */
+@page {
+  size: 8.5in 11in;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+
+/* dashboard */
+.dashboardWrap {
+  @apply h-full bg-gray-100;
+}
+.dashboard {
+  @apply h-full;
+}
+
+@media (min-width: 1024px) {
+  .column-block {
+    column-count: 3;
+    column-gap: 24px;
+  }
+}
+
+/* set some font alternates */
+.content {
+  font-feature-settings: "calt";
+}
+table {
+  font-feature-settings: "tnum";
+}
+
+@tailwind utilities;
