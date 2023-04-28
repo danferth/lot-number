@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Hint } from "react-autocomplete-hint"
 import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 import "twin.macro"
 import { InputWrap } from "../../components/el/form"
 import DashboardLayout from "../../components/dashboardlayout"
@@ -9,7 +8,7 @@ import useRoles from "../../components/useRoles"
 
 const Parts = ({ data }) => {
   useRoles("user")
-  const { productData, images } = data
+  const { productData } = data
 
   // find a part number
   const [foundPartNo, setFoundPartNo] = useState()
@@ -103,23 +102,10 @@ const Parts = ({ data }) => {
                   <tbody className="bg-white divide-y divide-gray-200">
                     {productData &&
                       productData.edges.map(part => {
-                        const prodImage = images.edges.find(
-                          im => im.node.name + im.node.ext === part.node.image
-                        )
                         return (
                           <tr className="" key={part.node.id}>
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
-                                <div className="flex-shrink-0 h-14 w-14">
-                                  <GatsbyImage
-                                    className="h-14 w-14 rounded-full"
-                                    image={
-                                      prodImage.node.childImageSharp
-                                        .gatsbyImageData
-                                    }
-                                    alt=""
-                                  />
-                                </div>
                                 <div className="ml-4">
                                   <div className="text-sm font-medium text-gray-900">
                                     {part.node.title}
@@ -204,21 +190,6 @@ export const query = graphql`
           unique_document
           line
           series
-        }
-      }
-    }
-    images: allFile(filter: { absolutePath: { regex: "/products/*/" } }) {
-      edges {
-        node {
-          name
-          ext
-          childImageSharp {
-            gatsbyImageData(
-              width: 400
-              placeholder: BLURRED
-              layout: CONSTRAINED
-            )
-          }
         }
       }
     }
