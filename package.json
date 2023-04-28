@@ -1,19 +1,19 @@
 {
-  "name": "gatsby-htslabs",
+  "name": "lot-number",
   "private": true,
-  "description": "Thomson | Solutions At Work(tm) company website",
-  "version": "2.0.0",
+  "description": "QC Application for CofA Documents",
+  "version": "1.5.0",
   "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "dependencies": {
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+      "start": "next start"
+    },
+    "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@headlessui/react": "^1.4.3",
@@ -24,33 +24,13 @@
     "algoliasearch": "^4.5.1",
     "autoprefixer": "^10.3.7",
     "axios": "^0.22.0",
-    "framer-motion": "^2.9.4",
-    "gatsby": "^3.14.2",
-    "gatsby-plugin-anchor-links": "^1.2.1",
-    "gatsby-plugin-emotion": "^6.14.0",
-    "gatsby-plugin-gtag": "^1.0.13",
-    "gatsby-plugin-html-attributes": "^1.0.5",
-    "gatsby-plugin-image": "^1.14.1",
-    "gatsby-plugin-manifest": "^3.14.0",
-    "gatsby-plugin-mdx": "^2.14.0",
-    "gatsby-plugin-postcss": "^4.14.0",
-    "gatsby-plugin-react-helmet": "^4.14.0",
-    "gatsby-plugin-react-svg": "^3.0.1",
-    "gatsby-plugin-robots-txt": "^1.6.10",
-    "gatsby-plugin-sharp": "^3.14.1",
-    "gatsby-plugin-sitemap": "^4.10.0",
-    "gatsby-remark-images": "^5.11.0",
-    "gatsby-source-filesystem": "^3.14.0",
-    "gatsby-transformer-json": "^3.14.0",
-    "gatsby-transformer-sharp": "^3.14.0",
+    "framer-motion": "^2.9.4",  
     "mongodb": "^4.3.1",
     "netlify-identity-widget": "^1.9.2",
     "postcss": "^8.3.9",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^6.7.0",
-    "react": "^16.12.0",
     "react-autocomplete-hint": "^1.3.0",
-    "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-hook-form": "^6.10.1",
     "react-instantsearch-dom": "^6.12.1",
@@ -67,9 +47,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Thomson-htslabs/gatsby-htslabs"
+    "url": "https://github.com/danferth/lot-number"
   },
   "bugs": {
-    "url": "https://github.com/Thomson-htslabs/gatsby-htslabs/issues"
+    "url": "https://github.com/danferth/lot-number/issues"
   }
 }
