@@ -101,56 +101,7 @@ module.exports = {
         path: `${__dirname}/src/content/json/`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `general`,
-        path: `${__dirname}/src/general/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `technical`,
-        path: `${__dirname}/src/technical/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `published`,
-        path: `${__dirname}/src/published/`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-              tracedSVG: true,
-              wrapperStyle: "margin-top:24px; margin-bottom:16px; width:75%;",
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `video`,
-        path: `${__dirname}/src/video/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `jobs`,
-        path: `${__dirname}/src/jobs/`,
-      },
-    },
+
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
@@ -174,17 +125,6 @@ module.exports = {
       resolve: `gatsby-plugin-emotion`,
       options: {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-gtag`,
-      options: {
-        // your google analytics tracking id
-        trackingId: `UA-18977444-1`,
-        // Puts tracking script in the head instead of the body
-        head: false,
-        // enable ip anonymization
-        anonymize: true,
       },
     },
   ],

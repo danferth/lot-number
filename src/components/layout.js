@@ -1,7 +1,6 @@
 import React from "react"
 import { StateContext } from "./el/provider"
 import PageHeader from "./pageheader"
-import NavBar from "./ui/navbar"
 import Footer from "./footer"
 import SeO from "./seo"
 import PageAlert from "../components/el/pagealert"
@@ -20,7 +19,6 @@ const Layout = props => {
           ></SeO>
           <PageAlert />
           <SiteMessage />
-          <NavBar></NavBar>
           <main className="main">
             {props.noheader ? (
               ""
