@@ -2,7 +2,7 @@
 import React, { Fragment, useState } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import DashboardNav from "../ui/dashboardnavigation"
-import { MenuIcon, XIcon } from "@heroicons/react/outline"
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import DashboardLogin from "../parts/dashboardlogin"
 
 const Dashboard = props => {
@@ -54,7 +54,7 @@ const Dashboard = props => {
                       onClick={() => setSidebarOpen(false)}
                     >
                       <span className="sr-only">Close sidebar</span>
-                      <XIcon
+                      <XMarkIcon
                         className="h-6 w-6 text-white"
                         aria-hidden="true"
                       />
@@ -87,7 +87,7 @@ const Dashboard = props => {
               onClick={() => setSidebarOpen(true)}
             >
               <span className="sr-only">Open sidebar</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
           <main className="flex-1">

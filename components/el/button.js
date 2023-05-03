@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "next/link"
+import Link from "next/link"
 
 import CheckIcon from "../../images/svg/icons/check.svg"
 import AirotopIcon from "../../images/svg/tic/airotopIcon.svg"

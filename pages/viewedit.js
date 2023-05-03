@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect, useRef } from "react"
-import { StateContext } from "../../components/el/provider"
+import React, { useState, useEffect, useRef } from "react"
+import useQcStore from "../components/el/store"
 import { Hint } from "react-autocomplete-hint"
 import { useForm, useFieldArray, Controller } from "react-hook-form"
 import data from "../../json/products.json"
@@ -21,7 +21,7 @@ import {
   InformationCircleIcon,
   PencilIcon,
   TrashIcon,
-} from "@heroicons/react/solid"
+} from "@heroicons/react/24/solid"
 import {
   Table,
   Thead,
@@ -37,8 +37,11 @@ const ViewEdit = () => {
   const { siteUser } = useIdentity()
   const signature = siteUser ? siteUser.user_metadata.full_name : ""
   // page alert
-  const { stateAlert } = useContext(StateContext)
-  const [pageAlert, setPageAlert] = stateAlert // eslint-disable-line no-unused-vars
+
+  const [pageAlert, setPageAlert] = useQcStore(state => [
+    state.pageAlert,
+    state.setPageAlert,
+  ])
 
   const errorAlert = (title, message) => {
     const alert = {

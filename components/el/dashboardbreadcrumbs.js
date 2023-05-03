@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, { useState, useContext, useEffect } from "react"
-import { CheckIcon } from "@heroicons/react/solid"
-import { StateContext } from "../el/provider"
+import React, { useState, useEffect } from "react"
+import { CheckIcon } from "@heroicons/react/24/solid"
+import useQcStore from "./store"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -9,8 +9,9 @@ function classNames(...classes) {
 
 const DashboardBreadcrumbs = props => {
   // state of form steps
-  const { stateEnterDataStep } = useContext(StateContext)
-  const [enterDataStep, setEnterDataStep] = stateEnterDataStep
+
+  const enterDataStep = useQcStore(state => state.enterDataStep)
+  const setEnterDataStep = useQcStore(state => state.setEnterDataStep)
 
   const [stepStatus, setStepStatus] = useState([
     "current",

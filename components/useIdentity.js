@@ -1,14 +1,18 @@
-import { useEffect, useContext } from "react"
-import { StateContext } from "./el/provider"
+import { useEffect } from "react"
+import useQcStore from "./el/store"
 const netlifyIdentity = require("netlify-identity-widget")
 
 const useIdentity = () => {
-  const { stateSiteUser, stateLogedIn, stateRoles, stateIsUser } =
-    useContext(StateContext)
-  const [siteUser, setSiteUser] = stateSiteUser
-  const [logedIn, setLogedIn] = stateLogedIn
-  const [roles, setRoles] = stateRoles
-  const [isUser, setIsUser] = stateIsUser // eslint-disable-line no-unused-vars
+  const [siteUser, setSiteUser] = useQcStore(state => [
+    state.siteUser,
+    state.setSiteUser,
+  ])
+  const [logedIn, setLogedIn] = useQcStore(state => [
+    state.logedIn,
+    state.setLogedIn,
+  ])
+  const [roles, setRoles] = useQcStore(state => [state.roles, state.setRoles])
+  const setIsUser = useQcStore(state => state.setIsUser)
 
   const setUser = user => {
     setSiteUser(user)

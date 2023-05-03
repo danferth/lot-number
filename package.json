@@ -24,7 +24,8 @@
     "react-dom": "latest",
     "react-hook-form": "^7.43.9",
     "react-instantsearch-dom": "^6.39.1",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@types/react": "18.2.0",

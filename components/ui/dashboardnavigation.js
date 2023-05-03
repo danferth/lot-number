@@ -1,16 +1,15 @@
 import React from "react"
-import { Link } from "next/link"
-
+import Link from "next/link"
 import useIdentity from "../useIdentity"
 import {
-  FolderAddIcon,
-  ArchiveIcon,
-  BadgeCheckIcon,
-  CollectionIcon,
+  FolderPlusIcon,
+  ArchiveBoxIcon,
+  Square3Stack3DIcon,
+  CheckBadgeIcon,
   HomeIcon,
   GlobeAltIcon,
-} from "@heroicons/react/outline"
-import TICicon from "../../images/svg/tic/tic.svg"
+} from "@heroicons/react/24/outline"
+// import TICicon from "../../images/svg/tic/tic.svg"
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
@@ -28,25 +27,25 @@ const DashboardNav = props => {
       name: "Enter Manufacturing Data",
       to: "../enterdata",
       access: "editor",
-      icon: FolderAddIcon,
+      icon: FolderPlusIcon,
     },
     {
       name: "View/Edit Data",
       to: "../viewedit",
       access: "editor",
-      icon: CollectionIcon,
+      icon: Square3Stack3DIcon,
     },
     {
       name: "Parts Registry",
       to: "../parts",
       access: "user",
-      icon: ArchiveIcon,
+      icon: ArchiveBoxIcon,
     },
     {
       name: "Certificate Retrieval",
       to: "../retrieval",
       access: "distributor",
-      icon: BadgeCheckIcon,
+      icon: CheckBadgeIcon,
     },
     { name: "htslabs.com", to: "/", access: "user", icon: GlobeAltIcon },
   ]
@@ -59,7 +58,7 @@ const DashboardNav = props => {
       )}
     >
       <div className="flex items-center flex-shrink-0 px-4">
-        <TICicon className="h-12 w-auto text-gray-300 fill-current" />
+        {/* <TICicon className="h-12 w-auto text-gray-300 fill-current" /> */}
       </div>
       <nav
         className={classNames(
@@ -73,7 +72,6 @@ const DashboardNav = props => {
             <Link
               key={item.name}
               href={item.to}
-              activeStyle={tw`bg-gray-900 text-white`}
               className={classNames(
                 props.mobile ? "text-base" : "text-sm",
                 accessGranted

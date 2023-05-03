@@ -1,12 +1,10 @@
-import { useContext } from "react"
-import { StateContext } from "./el/provider"
+import useQcStore from "./el/store"
 import { useRouter } from "next/router"
 
 const useRoles = role => {
-  const { stateLogedIn, stateRoles, stateIsUser } = useContext(StateContext)
-  const [roles] = stateRoles
-  const [logedIn] = stateLogedIn
-  const [isUser] = stateIsUser
+  const logedIn = useQcStore(state => state.logedIn)
+  const roles = useQcStore(state => state.roles)
+  const isUser = useQcStore(state => state.isUser)
   const isBrowser = typeof window !== "undefined"
 
   const checkPermision = () => {

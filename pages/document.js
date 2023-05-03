@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef, useContext } from "react"
-import { StateContext } from "../../components/el/provider"
+import React, { useState, useEffect, useRef } from "react"
+import { useUser } from "../components/el/store"
 import { useRouter } from "next/router"
 import data from "../../json/products.json"
 import { Button } from "../../components/el/dashboard-button"
@@ -16,8 +16,7 @@ import MaterialComposition from "../../components/parts/certificates/materialcom
 import SterilizationProcess from "../../components/parts/certificates/sterilizationprocess"
 import { Buffer } from "buffer"
 const CertificateRequest = () => {
-  const { stateIsUser } = useContext(StateContext)
-  const [isUser] = stateIsUser
+  const isUser = useUser()
   const isBrowser = typeof window !== "undefined"
   const router = useRouter()
   useEffect(() => {

@@ -1,8 +1,13 @@
-import React, { useState, useContext, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Hint } from "react-autocomplete-hint"
 import { useForm, useFieldArray, Controller } from "react-hook-form"
 import data from "../../json/products.json"
-import { StateContext } from "../../components/el/provider"
+import {
+  pageAlert,
+  setPageAlert,
+  enterDataStep,
+  setEnterDataStep,
+} from "../components/el/store"
 import axios from "axios"
 
 import { Button, VerifyButton } from "../../components/el/dashboard-button"
@@ -12,7 +17,7 @@ import useRemoveBackTotop from "../../components/useRemoveBackToTop"
 import DashboardLayout from "../../components/dashboardlayout"
 import Xicon from "../../images/svg/icons/x.svg"
 import DashboardBreadcrumbs from "../../components/el/dashboardbreadcrumbs"
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/solid"
+import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid"
 import useRoles from "../../components/useRoles"
 import useIdentity from "../../components/useIdentity"
 function classNames(...classes) {
@@ -41,9 +46,12 @@ const CertificateDashboard = () => {
   const autocompleteOptions = createAutocompleteOptions()
 
   // state of form steps
-  const { stateEnterDataStep, stateAlert } = useContext(StateContext)
-  const [enterDataStep, setEnterDataStep] = stateEnterDataStep
-  const [pageAlert, setPageAlert] = stateAlert // eslint-disable-line no-unused-vars
+
+  const pageAlert = pageAlert()
+  const setPageAlert = setPageAlert()
+  const enterDataStep = enterDataStep()
+  const setEnterDataStep = setEnterDataStep()
+
   const successAlert = (title, message) => {
     const alert = {
       button: false,

@@ -1,6 +1,6 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { globalHistory } from "@reach/router"
-import { StateContext } from "./provider"
+import useQcStore from "./store"
 
 import { motion, AnimatePresence } from "framer-motion"
 //icons
@@ -13,8 +13,12 @@ import InfoIcon from "../../images/svg/icons/infocircle.svg"
 //popup alert
 const PageAlert = () => {
   //all the alerts of alerts
-  const { stateAlert } = useContext(StateContext)
-  const [pageAlert, setPageAlert] = stateAlert
+
+  const [pageAlert, setPageAlert] = useQcStore(state => [
+    state.pageAlert,
+    state.setPageAlert,
+  ])
+
   const [alertVisible, setAlertVisible] = useState(false)
   const [timerId, setTimerId] = useState()
 
